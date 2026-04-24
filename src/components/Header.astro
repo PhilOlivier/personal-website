@@ -1,0 +1,131 @@
+---
+---
+
+<header class="site-header">
+  <div class="header-identity">
+    <img src="/images/portrait.png" alt="Philip Olivier" class="portrait" />
+    <div class="header-text">
+      <h1 class="site-name">Philip Olivier</h1>
+      <p class="tagline">[TAGLINE PLACEHOLDER]</p>
+      <nav class="social-links">
+        <a href="https://linkedin.com/in/philolivier" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/PhilOlivier" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </div>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+    <span id="theme-icon">☾</span>
+  </button>
+</header>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  const icon = document.getElementById('theme-icon');
+
+  function getTheme(): string {
+    return (
+      document.documentElement.getAttribute('data-theme') ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+    );
+  }
+
+  function updateIcon() {
+    if (icon) icon.textContent = getTheme() === 'dark' ? '☀' : '☾';
+  }
+
+  updateIcon();
+
+  toggle?.addEventListener('click', () => {
+    const next = getTheme() === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    updateIcon();
+  });
+</script>
+
+<style>
+  .site-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .header-identity {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  .portrait {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .header-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .site-name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .tagline {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xs);
+  }
+
+  .social-links a {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+  }
+
+  .social-links a:hover {
+    color: var(--color-accent);
+  }
+
+  .theme-toggle {
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .theme-toggle:hover {
+    color: var(--color-text);
+    border-color: var(--color-text-muted);
+  }
+
+  @media (max-width: 480px) {
+    .portrait {
+      width: 70px;
+      height: 70px;
+    }
+
+    .site-name {
+      font-size: 1.25rem;
+    }
+  }
+</style>
