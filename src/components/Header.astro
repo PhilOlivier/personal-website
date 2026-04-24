@@ -3,9 +3,9 @@
 
 <header class="site-header">
   <div class="header-identity">
-    <img src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/portrait.png`} alt="Philip Olivier" class="portrait" />
+    <img src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/portrait-watercolour.png`} alt="Philip Olivier" class="portrait" />
     <div class="header-text">
-      <h1 class="site-name">Philip Olivier</h1>
+      <h1 class="site-name">Hello, I'm Philip</h1>
       <p class="tagline">[TAGLINE PLACEHOLDER]</p>
       <nav class="social-links">
         <a href="https://linkedin.com/in/philolivier" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -49,7 +49,7 @@
     align-items: flex-start;
     justify-content: space-between;
     gap: var(--spacing-md);
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
   }
 
   .header-identity {
@@ -59,8 +59,8 @@
   }
 
   .portrait {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
@@ -74,7 +74,7 @@
 
   .site-name {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.875rem;
     margin: 0;
     color: var(--color-text);
   }
@@ -105,7 +105,7 @@
     background: none;
     border: 1px solid var(--color-border);
     border-radius: 4px;
-    padding: var(--spacing-xs) var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
     cursor: pointer;
     font-size: 1rem;
     color: var(--color-text-muted);
@@ -120,12 +120,12 @@
 
   @media (max-width: 480px) {
     .portrait {
-      width: 70px;
-      height: 70px;
+      width: 72px;
+      height: 72px;
     }
 
     .site-name {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
     }
   }
 </style>
