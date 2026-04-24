@@ -6,7 +6,6 @@
     <img src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/portrait-watercolour.png`} alt="Philip Olivier" class="portrait" />
     <div class="header-text">
       <h1 class="site-name">Hello, I'm Philip</h1>
-      <p class="tagline">[TAGLINE PLACEHOLDER]</p>
       <nav class="social-links">
         <a href="https://linkedin.com/in/philolivier" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://github.com/PhilOlivier" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -49,27 +48,26 @@
     align-items: flex-start;
     justify-content: space-between;
     gap: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
   }
 
   .header-identity {
     display: flex;
-    align-items: center;
-    gap: var(--spacing-md);
+    align-items: flex-start;
+    gap: var(--spacing-lg);
   }
 
   .portrait {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
+    width: 120px;
+    height: auto;
     flex-shrink: 0;
   }
 
   .header-text {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xs);
+    gap: var(--spacing-sm);
+    padding-top: var(--spacing-xs);
   }
 
   .site-name {
@@ -79,16 +77,9 @@
     color: var(--color-text);
   }
 
-  .tagline {
-    margin: 0;
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
-  }
-
   .social-links {
     display: flex;
     gap: var(--spacing-md);
-    margin-top: var(--spacing-xs);
   }
 
   .social-links a {
@@ -120,8 +111,7 @@
 
   @media (max-width: 480px) {
     .portrait {
-      width: 72px;
-      height: 72px;
+      width: 90px;
     }
 
     .site-name {
